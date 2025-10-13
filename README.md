@@ -5,14 +5,12 @@ plug-ins. Setup is meant to be done on Debian 12 (Bookworm) with the latest Neov
 time of posting 0.11.3)
 
 1. Prerequisites
-    1.1. Neovim app image is needed since installation through apt on bookworm will default to a 
-    version 0.7* which does not support some lua script features. Find the latest stable release
-    from the official [release page](https://github.com/neovim/neovim/releases) for nvim .
-    1.2. After download give the nvim.appimage file executable permissions with:
+    1. Neovim app image is needed since installation through apt on bookworm will default to a version 0.7* which does not support some lua script features. Find the latest stable release
+    1. After download give the nvim.appimage file executable permissions with:
     <code>chmod u+x <path to downloaded file> </code> 
-    1.3. Move the nvim.appimage file to PATH :
+    1. Move the nvim.appimage file to PATH :
     <code>mv <path to downloaded file> /usr/local/bin/nvim</code>
-    1.4. Install the .NET sdk and runtime (for Debian 12 must be .9 or above). Follow instructions 
+    1. Install the .NET sdk and runtime (for Debian 12 must be .9 or above). Follow instructions 
     from the Debian [installation page](https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian?tabs=dotnet9)
     or run the following commands:
     download the deb package and depackage it
@@ -32,7 +30,7 @@ time of posting 0.11.3)
     <code>
     sudo apt-get install -y dotnet-runtime-9.0
     </code>
-    1.5. Install ripgrep to be able to use telescope's fuzzy finder.
+    1. Install ripgrep to be able to use telescope's fuzzy finder.
     <code>
     curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.1/ripgrep_14.1.1-1_amd64.deb
     $ sudo dpkg -i ripgrep_14.1.1-1_amd64.deb
