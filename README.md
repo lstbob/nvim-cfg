@@ -28,7 +28,6 @@ or run the following commands:
     <code>sudo apt-get install -y dotnet-runtime-9.0
     </code>
 
-
 5. Install ripgrep to be able to use telescope's fuzzy finder.
     <code>
     curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.1/ripgrep_14.1.1-1_amd64.deb
