@@ -1,9 +1,9 @@
-# nvim configuration
+# Neovim configuration
 ## Summary
 Neovim configuration for C# and dotnet development with minimal setup and only a couple of must-have
 plug-ins. Setup is meant to be done on Debian 12 (Bookworm) with the latest Neovim version (at the
 time of posting 0.11.3)
-
+### Installation
 1. Neovim app image is needed since installation through apt on bookworm will default to a version 0.7* which does not support some lua script features. Find the latest stable release
 2. After download give the nvim.appimage file executable permissions with:
 <code>chmod u+x nvim.appimage </code> 
@@ -38,6 +38,7 @@ or run the following commands:
     <code>~/.config/nvim</code>
 7. Open up nvim and run :PackerSync to install all plug-ins.
 8. Check to see if you have roslyn installed. If not you should install it manually with
-<code>:MasonInstall roslyn</code>. The additonal registries are already added to the mason config
-so it should work out of the box.
-
+    <code>:MasonInstall roslyn</code>. The additonal registries are already added to the mason config
+    so it should work out of the box.
+9. Install clipboard tool for multipe register copy/paste support.
+   <code>sudo apt install xsel</code> 

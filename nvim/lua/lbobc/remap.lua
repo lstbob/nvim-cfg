@@ -17,7 +17,6 @@ vim.keymap.set('v', '<C-v>', '<C-r>+', { noremap = true, silent = true}) -- past
 
 -- terminal
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {desc = 'Exiting terminal '})
-vim.keymap.set('n', '<leader>tt', '<C-^>', {desc = 'Switching to terminal '})
 
 
 -- find and replace in all files
