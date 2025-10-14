@@ -9,16 +9,17 @@ return require('packer').startup(function(use)
 
 	use({ 'rose-pine/neovim',
 	as = 'rose-pine',
+    disable_italics = true,
 	config = function()
+    require('rose-pine').setup({ disable_italics = true })
 		vim.cmd('colorscheme rose-pine')
 	end })
 use('duane9/nvim-rg')
---use{'nvim-treesitter/nvim-treesitter', 
---    run = function()
---        local ts_update = require('nvim-treesitter.instal').update({ with_sunc = true})
---        ts_update()
---    end,}
 use('theprimeagen/harpoon')
+use {
+  'nvim-treesitter/nvim-treesitter',
+  run = ':TSUpdate'
+}
 use {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
@@ -35,8 +36,11 @@ use({
     })
   end,
 })
---LSP IMPORTAAAANT
 
+use 'neovim/nvim-lspconfig'          -- Core LSP support
+use 'williamboman/mason.nvim'        -- Manage LSP/DAP/Linter installations
+use 'williamboman/mason-lspconfig.nvim'
+--LSP IMPORTAAAANT
 use { "hrsh7th/nvim-cmp" }
 use { "hrsh7th/cmp-nvim-lsp" }
 use { "hrsh7th/cmp-buffer" }

@@ -4,6 +4,31 @@ require("mason").setup({
         "github:Crashdummyy/mason-registry",
     },
 })
+require('mason').setup()
+require('mason-lspconfig').setup {
+  ensure_installed = {
+    "clangd",       -- C/C++
+    "gopls",        -- Go
+    "pylsp",        -- Python
+    "rust_analyzer" -- Rust
+  },
+  automatic_installation = true,
+}
+
+-- LSP server setup
+local lspconfig = require('lspconfig')
+
+local servers = { 'clangd', 'gopls', 'pylsp', 'rust_analyzer' }
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = function(client, bufnr)
+      local opts = { buffer = bufnr, noremap = true, silent = true }
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    end,
+    capabilities = require('cmp_nvim_lsp').default_capabilities()
+  }
+end
 
 -- Configure the LSP server with keymaps and settings
 vim.lsp.config("roslyn", {
