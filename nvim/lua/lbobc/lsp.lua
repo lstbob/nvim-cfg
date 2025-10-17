@@ -66,8 +66,8 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({
     ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Confirm selection
-    ['<S-k>'] = cmp.mapping.select_next_item(), -- Navigate next
-    ['<S-j>'] = cmp.mapping.select_prev_item(), -- Navigate previous
+    ['<S-j>'] = cmp.mapping.select_next_item(), -- Navigate next
+    ['<S-k>'] = cmp.mapping.select_prev_item(), -- Navigate previous
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' }, -- This sources from your LSP clients, including Roslyn
