@@ -17,6 +17,9 @@ vim.keymap.set('v', '<C-v>', '<C-r>+', { noremap = true, silent = true}) -- past
 
 -- terminal
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {desc = 'Exiting terminal '})
+vim.keymap.set("n", "<leader>tt", function()
+  vim.cmd("10split | terminal")
+end, { desc = "terminal at the bottom" }) --Open split window with terminal
 
 
 -- find and replace in all files
@@ -56,6 +59,7 @@ vim.keymap.set("n", "<leader>ct", function()
   vim.cmd("Ex")
 end, { desc = "Close tab with file explorer" })
   
+
 -- format code
 vim.keymap.set('n', '<leader>cf', function()
   vim.lsp.buf.format({ async = true })
