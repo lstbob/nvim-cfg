@@ -41,3 +41,14 @@ or run the following commands:
     so it should work out of the box.
 9. Install clipboard tool for multipe register copy/paste support.
    <code>sudo apt install xsel</code> 
+
+10. Install formatters for different languages so that conform.nvim plugin can autoformat
+C#	CSharpier	dotnet tool install -g csharpier	Autoformats C# according to Roslyn rules. Add to PATH: export PATH="$PATH:$HOME/.dotnet/tools"
+JavaScript / TypeScript / YAML / JSON	Prettierd (recommended)	npm i -g @fsouza/prettierd	Super-fast daemonized prettier.
+Fallback if needed: npm i -g prettier
+Rust	rustfmt	rustup component add rustfmt	Usually included with Rust.
+Go	gofmt	already comes with Go	Nothing extra needed.
+Python	black	pip install black	Strict PEP8 formatting.
+SQL	sqlfluff	pip install sqlfluff	Optional dialect flag later.
+C	clang-format	sudo apt install clang-format (Linux)
+or brew install clang-format (macOS)	Works for both C/C++ files.
