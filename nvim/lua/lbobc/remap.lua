@@ -1,13 +1,16 @@
 -- global
 vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>e', vim.cmd.Ex) 
-
+vim.keymap.set('n', 'C-a', vim.cmd(''))
 vim.keymap.set("v","J",":m '>+1<CR>gv=gv") --move lines when in visual mode
 vim.keymap.set("v","K",":m '<-2<CR>gv=gv")
 
 -- nvim config editing
-vim.keymap.set('n', '<leader>`', ':tabnew $MYVIMRC<CR>', { noremap = true, silent = true, desc = "Open init.lua in new tab" })
-
+vim.keymap.set('n', '<leader>`', function()
+    vim.cmd('tabnew $MYVIMRC<CR>')
+    vim.cmd('lcd ~/.config/nvim/')
+    vim.cmd('Ex')
+end, {desc = "edit vimrc"} )
 -- coppy paste config
 vim.keymap.set('n', '<C-c>', '"+yy', {noremap = true, silent = true}) -- copy curent line
 vim.keymap.set('v', '<C-c>', '"+y', {noremap = true, silent = true}) -- copy curent line in vis mode
@@ -58,14 +61,3 @@ vim.keymap.set("n", "<leader>ct", function()
   vim.cmd("tabc")
   vim.cmd("Ex")
 end, { desc = "Close tab with file explorer" })
-  
-
--- format code
-vim.keymap.set('n', '<leader>cf', function()
-  vim.lsp.buf.format({ async = true })
-end, { desc = "Format code with LSP" })
-
--- show errors in dialog and navigate them
-vim.keymap.set('n', '<leader>se', vim.diagnostic.open_float, { desc = "Show diagnostics under cursor" })
-vim.keymap.set('n', '<C-k>', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
-vim.keymap.set('n', '<C-j>', vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })

@@ -7,6 +7,10 @@ local i = ls.insert_node
 -- Load snippets for C# filetype
 ls.add_snippets("cs", {
     -- 1. cdesc/
+    s("/ccd/", {
+        t({"/// <summary>", "/// "}), i(1, "*"), t({"", "/// </summary>"}),
+    }),
+
     s("/cld/", {
         t({"/// <summary>", "/// Represents "}), i(1, "*"), t({"", "/// </summary>"}),
     }),
@@ -20,13 +24,21 @@ ls.add_snippets("cs", {
     -- 3. mdesc/
     s("/md/", {
         t({"/// <summary>", "/// Responsible for "}), i(1, "*"), t({"", "/// </summary>"}),
-        t({"", "/// <param name=\"param1\">"}), i(2, "*"), t({"</param>"}),
-        t({"", "/// <param name=\"param2\">"}), i(3, "*"), t({"</param>"}),
-        t({"", "/// <param name=\"param3\">"}), i(4, "*"), t({"</param>"}),
-        t({"", "/// <param name=\"param4\">"}), i(5, "*"), t({"</param>"}),
-        t({"", "/// <exception cref=\""}), i(6, "*"), t({"\">"}), i(7, "*"), t({"</exception>"}),
-        t({"", "/// <returns>"}), i(8, "*"), t({".</returns>"}),
+
+        t({"", "/// <param name=\""}), i(2, "*"), t({"\">"}), i(3, "*"), t({"</param>"}),
+        t({"", "/// <param name=\""}), i(4, "*"), t({"\">"}), i(5, "*"), t({"</param>"}),
+        t({"", "/// <param name=\""}), i(6, "*"), t({"\">"}), i(7, "*"), t({"</param>"}),
+        t({"", "/// <param name=\""}), i(8, "*"), t({"\">"}), i(9, "*"), t({"</param>"}),
+
+        t({"", "/// <exception cref=\""}), i(10, "*"), t({"\">"}), i(11, "*"), t({"</exception>"}),
+        t({"", "/// <returns>"}), i(12, "*"), t({".</returns>"}),
     }),
+    
+    s("/utaaa/", {
+        t("// Arrange"), t({"", ""}), i(1, "*"), t({"", "// Act"}), t({"", ""}), i(2, "*"),
+        t({"", "// Assert"}), t({"", ""}), i(3, "*"),
+    })
+
 })
 
 -- Optional: <Tab> to expand snippet or jump

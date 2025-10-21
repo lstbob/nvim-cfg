@@ -45,5 +45,6 @@ use { "hrsh7th/cmp-buffer" }
 use { "hrsh7th/cmp-path" }
 use { "L3MON4D3/LuaSnip" }
 use {"mason-org/mason.nvim"}
+use{ "stevearc/conform.nvim"}
 end)
 
